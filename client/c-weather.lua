@@ -9,6 +9,9 @@ local serverID = ""
 local newHours = ""
 local newMinutes = ""
 local freezeTimeNew = ""
+RegisterCommand("weathers", function(source)
+TriggerEvent('chat:addMessage', {color = { 255, 0, 0},multiline = true,args = {"Weathers", "BLIZZARD, CLEAR, CLEARING, CLOUDS, EXTRASUNNY, FOGGY, HALLOWEEN, NEUTRAL, OVERCAST, RAIN, SMOG, SNOW, SNOWLIGHT, THUNDER, XMAS"}})
+end, false)
 
 RegisterCommand("weather", function(source, args)
 if args[1] then
@@ -108,7 +111,7 @@ TriggerEvent('chat:addMessage', {color = { 255, 0, 0},multiline = true,args = {"
 TriggerServerEvent("discord", 'SYSTEM', '**'..name..'** ('..'**'..serverID..'**'..')' .. ' set Blackout to '.. tostring(BlackoutEnabled)..".")
 end, false)]]
 
-
+--[[
 RegisterCommand("time", function(source, args)
 	if tonumber(args[1]) and not args[2] then
 		newHours = tonumber(args[1])
@@ -127,7 +130,7 @@ RegisterCommand("time", function(source, args)
 		print(newHours..":"..newMinutes)
 	end
 end, false)
-
+]]
 TriggerEvent('chat:addSuggestion', '/weather', 'Change the weather (ADMIN ONLY)', {
     { name="Weather type", help="Leave blank to get a list of acceptable weathers." }
 })

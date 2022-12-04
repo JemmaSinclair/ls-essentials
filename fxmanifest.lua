@@ -17,3 +17,8 @@ server_export 'sendDiscord'
 exports { 
 	'sendDiscord'
 }
+
+dependencies {
+	'vMenu',
+	'/onesync'
+}
