@@ -1,12 +1,11 @@
-RegisterCommand('getVeh', function(source, args)
-local Veh = GetEntityModel(GetVehiclePedIsIn(PlayerPedId(), false))
-	print('Vehicle Hash is:'.. Veh .."")
-end, false)
+if enableextras then
+if enablesheriffx then
 TriggerEvent('chat:addSuggestion', '/so', 'Setup your vehicle.  Leave arguments blank for Patrol Lightbar.', {
-    { name="Slicktop?", help="0 = No | 1 = Yes" },
-    { name="Supervisor?", help="0 = No | 1 = Yes" },
-    { name="Bedcap? (Truck Only)", help="0 = No | 1 = Yes" }
+    { name="Slicktop", help="0 = No | 1 = Yes" },
+    { name="Livery", help="0 = Patrol | 1 = Supervisor | 3 = Unmarked" },
+    { name="Bedcap (Truck Only)", help="0 = No | 1 = Yes" }
 })
+
 
 RegisterCommand('so', function(source, args)
 local Veh = GetVehiclePedIsIn(PlayerPedId(), false)
@@ -15,7 +14,7 @@ local Livery = tostring(args[2])
 local Bedcap = tostring(args[3])
 -- Sheriff 
     if GetEntityModel(Veh) == GetHashKey('valor1bb') then 
-		SetVehicleColours(Veh, 0, 0)
+		SetVehicleColours(Veh, 12, 12)
         if Type == '1' then
 			if Livery == '1' then
 				SetVehicleExtra(Veh, 1, 1)
@@ -1029,3 +1028,4 @@ local Bedcap = tostring(args[3])
 	})
 	end
 end, false)
+end end

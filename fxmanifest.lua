@@ -3,11 +3,17 @@ fx_version 'cerulean'
 games { 'gta5' }
 
 author 'Kara Webber'
-description 'Extras Script for Safe Haven Roleplay'
+description 'A series of scripts for FiveM.'
 version '1.0.0'
 
+shared_script 'config.lua'
+
 client_scripts{
-	'extras-so.lua',
-	--'extras-pd.lua',
-	'extras-st.lua',
-	}
+	'client/c-**.lua'
+}
+
+server_script 's-discord.lua'
+server_export 'sendDiscord'
+exports { 
+	'sendDiscord'
+}
